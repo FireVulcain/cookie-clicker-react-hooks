@@ -1,38 +1,214 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+
+body {
+    margin: 0;
+    font-family: "Merriweather", Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+}
+.container > div {
+    flex: 0 0 50%;
+}
+/* COOKIE SIDEBAR */
+.infos-cookie {
+    padding: 0 20px;
+    text-align: center;
+}
+.infos-cookie p {
+    font-weight: bold;
+}
+.infos-cookie p.nbCookie-title {
+    margin-bottom: 0;
+    font-size: 28px;
+}
+.infos-cookie p.nbCookie-subtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+}
+.infos-cookie img {
+    max-width: 256px;
+    cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cookie-container {
+    position: relative;
+    margin-top: 30px;
+}
+.cookie-container p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #fff;
+    font-size: 40px;
+    opacity: 0;
+    z-index: -1;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.cookie-container p.animate {
+    z-index: 20;
+    animation: transitionTop 1s;
+}
+@keyframes transitionTop {
+    0% {
+        top: 50%;
+        opacity: 1;
+    }
+    100% {
+        top: 0%;
+        opacity: 0;
+    }
+}
+/* SHOP */
+.shop .discovered-false.item {
+    display: none;
+}
+.shop {
+    /* overflow-y: scroll; */
+    max-height: 100vh;
+    width: 1000%;
+}
+.shop .items {
+    margin: 20px 0 0;
+    width: 300px;
+    position: relative;
+    overflow-y: hidden;
+    background: url("assets/panelGradientLeft.png") no-repeat top left, url("assets/panelGradientRight.png") no-repeat top right,
+        url("assets/panelHorizontal.png") repeat-x;
+    padding-top: 16px;
+}
+.shop .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 300px;
+    width: 100%;
+    min-height: 64px;
+    padding-right: 30px;
+    padding-left: 20px;
+
+    background: url("assets/storeTile.jpg");
+
+    cursor: pointer;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.shop .item:hover {
+    box-shadow: 0px 0px 16px #fff inset, 0px 0px 1px #000;
+    z-index: 20;
+}
+.shop .item .item-name {
+    margin: 0;
+    font-size: 22px;
+    line-height: 22px;
+    text-shadow: 0px 0px 4px #000;
+    color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.shop .item .price {
+    color: #6f6;
+    text-shadow: 0px 0px 6px #000, 0px 1px 1px #000;
+}
+.shop .item.noMoney .price {
+    color: #f66;
+}
+.shop .item .price,
+.shop .upgrades .tooltip-upgrade .price {
+    position: relative;
+    padding-left: 20px;
+    margin: 0;
+    font-weight: bold;
+}
+.shop .upgrades .tooltip-upgrade .price:before,
+.shop .item .price:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 4px;
+    background: url("./assets/money.png");
+    width: 16px;
+    height: 16px;
+}
+.shop .upgrades .tooltip-upgrade .price:before {
+    top: 2px;
 }
 
-.App-link {
-  color: #61dafb;
+.shop .item .owned {
+    margin: 0;
+    font-size: 40px;
+    line-height: 40px;
+    opacity: 0.2;
+    color: #000;
+    text-shadow: 0px 0px 8px #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.shop .upgrades {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 60px;
+    margin-top: 20px;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.shop .upgrades .upgrade-info {
+    margin: 0;
+    width: 48px;
+    height: 48px;
+    margin: 6px;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    background: rgba(0, 0, 0, 0.25);
+}
+.shop .upgrades .upgrade-info:before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: -6px;
+    width: 60px;
+    height: 60px;
+    display: block;
+    background: url("assets/upgrades/upgradeFrame.png");
+    background-position: 0px 0px;
+    z-index: 10;
+}
+
+.shop .upgrades .tooltip-upgrade .header-tooltip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.shop .upgrades .tooltip-upgrade .title {
+    font-weight: bold;
+    font-size: 110%;
+    color: #fff;
+    margin: 2px 20px 2px 0;
+    text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.3);
 }
