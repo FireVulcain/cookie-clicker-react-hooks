@@ -7,11 +7,13 @@ export default (state, action) => {
         case "INCREMENT_COOKIE":
             return {
                 ...state,
+                bakedCookie: state.bakedCookie + state.perClick,
                 nbCookie: state.nbCookie + state.perClick,
             };
         case "INCREMENT_COOKIE_SECOND":
             return {
                 ...state,
+                bakedCookie: state.bakedCookie + state.perSecond,
                 nbCookie: state.nbCookie + state.perSecond,
             };
         case "BUY_ITEM":

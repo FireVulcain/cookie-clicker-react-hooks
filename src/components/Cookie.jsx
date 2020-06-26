@@ -13,21 +13,35 @@ export const Cookie = () => {
     const { state, incrementCookieOnClick } = useContext(GlobalContext);
     const [active, setActive] = useState(false);
 
+    const cookieShower = () => {
+        if (state.bakedCookie >= 10000 && state.bakedCookie < 100000) {
+            return "cs1";
+        } else if (state.bakedCookie >= 100000 && state.bakedCookie < 1000000) {
+            return "cs2";
+        } else if (state.bakedCookie >= 1000000) {
+            return "cs3";
+        }
+    };
     return (
         <div className="infos-cookie">
-            <Counter />
-            <div className="cookie-container">
-                <p onAnimationEnd={() => setActive(false)} className={active ? "animate" : null}>
-                    + {state.perClick}
-                </p>
-                <img
-                    onClick={() => {
-                        incrementCookieOnClick();
-                        setActive(!active);
-                    }}
-                    src={cookie}
-                    alt="Cookie"
-                />
+            <div className={"cookie-shower " + cookieShower()}></div>
+            <div className="infos-cookie-wrapper">
+                <Counter />
+                <div className="cookie-container">
+                    <div className="shine-cookie"></div>
+                    <div className="shine-cookie-reverse"></div>
+                    <p onAnimationEnd={() => setActive(false)} className={active ? "animate" : null}>
+                        + {state.perClick}
+                    </p>
+                    <img
+                        onClick={() => {
+                            incrementCookieOnClick();
+                            setActive(!active);
+                        }}
+                        src={cookie}
+                        alt="Cookie"
+                    />
+                </div>
             </div>
         </div>
     );

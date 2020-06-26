@@ -19,17 +19,60 @@ body {
 }
 /* COOKIE SIDEBAR */
 .infos-cookie {
-    padding: 0 20px;
+    position: relative;
     text-align: center;
+    min-height: 100vh;
+
+    background: url("assets/bgBlue.jpg");
 }
+.infos-cookie .cookie-shower {
+    min-height: 100vh;
+    animation: slide 5s linear infinite;
+}
+.infos-cookie .cookie-shower.cs1 {
+    background: url("assets/cookieShower1.png");
+}
+.infos-cookie .cookie-shower.cs2 {
+    background: url("assets/cookieShower2.png");
+}
+.infos-cookie .cookie-shower.cs3 {
+    background: url("assets/cookieShower3.png");
+}
+
+.infos-cookie .infos-cookie-wrapper {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+}
+.infos-cookie .infos-cookie-wrapper > :not(.cookie-container) {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px 0;
+}
+
+@keyframes slide {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 512px;
+    }
+}
+
 .infos-cookie p {
     font-weight: bold;
+    text-shadow: rgb(0, 0, 0) 0px 0px 4px;
 }
 .infos-cookie p.nbCookie-title {
+    color: #fff;
     margin-bottom: 0;
+    margin-top: 0;
     font-size: 28px;
 }
 .infos-cookie p.nbCookie-subtitle {
+    color: #fff;
     margin-top: 0;
     margin-bottom: 0;
     font-size: 20px;
@@ -42,6 +85,42 @@ body {
 .cookie-container {
     position: relative;
     margin-top: 30px;
+}
+.cookie-container .shine-cookie,
+.cookie-container .shine-cookie-reverse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    background: url("assets/shine.png");
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 500px;
+    background-size: cover;
+    z-index: -10;
+    opacity: 0.4;
+}
+.cookie-container .shine-cookie {
+    animation: rotate 30s linear infinite;
+}
+.cookie-container .shine-cookie-reverse {
+    animation: rotate-reverse 30s linear infinite;
+}
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+@keyframes rotate-reverse {
+    from {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
 }
 .cookie-container p {
     position: absolute;
