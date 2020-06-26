@@ -40,7 +40,8 @@ export const Items = () => {
                 const itemClass = item[0] + " discovered-" + item[1].discovered + " item " + priceClass;
                 return (
                     <div onClick={() => handleBuyItem(item[0])} className={itemClass} key={key}>
-                        <div>
+                        <div className="icon"></div>
+                        <div className="data-item">
                             <p className="item-name">{item[1].name}</p>
                             <p className="price"> {commarize(item[1].price)}</p>
                         </div>

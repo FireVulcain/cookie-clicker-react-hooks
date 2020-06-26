@@ -94,6 +94,7 @@ body {
     padding-top: 16px;
 }
 .shop .item {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -117,6 +118,71 @@ body {
 .shop .item:hover {
     box-shadow: 0px 0px 16px #fff inset, 0px 0px 1px #000;
     z-index: 20;
+}
+.shop .item .icon {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: url("assets/buildings.png");
+    background-repeat: no-repeat;
+    margin: 0px;
+}
+.shop .item.cursors .icon {
+    background-position: 0 0;
+}
+.shop .item.grandma .icon {
+    background-position: 0 -64px;
+}
+.shop .item.farm .icon {
+    background-position: 0 -192px;
+}
+.shop .item.mine .icon {
+    background-position: 0 -256px;
+}
+.shop .item.factory .icon {
+    background-position: 0 -320px;
+}
+.shop .item.bank .icon {
+    background-position: 0 -384px;
+}
+.shop .item.temple .icon {
+    background-position: 0 -448px;
+}
+.shop .item.wizardTower .icon {
+    background-position: 0 -512px;
+}
+.shop .item.shipment .icon {
+    background-position: 0 -576px;
+}
+.shop .item.alchemyLab .icon {
+    background-position: 0 -640px;
+}
+.shop .item.portal .icon {
+    background-position: 0 -704px;
+}
+.shop .item.timeMachine .icon {
+    background-position: 0 -768px;
+}
+.shop .item.antimatterCondenser .icon {
+    background-position: 0 -832px;
+}
+.shop .item.prism .icon {
+    background-position: 0 -896px;
+}
+.shop .item.chancemaker .icon {
+    background-position: 0 -960px;
+}
+.shop .item.fractalEngine .icon {
+    background-position: 0 -1024px;
+}
+.shop .item.javascriptConsole .icon {
+    background-position: 0 -1088px;
+}
+
+.shop .item .data-item {
+    margin-left: 60px;
 }
 .shop .item .item-name {
     margin: 0;
