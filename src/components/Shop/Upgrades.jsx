@@ -32,10 +32,13 @@ export const Upgrades = () => {
                                 >
                                     <img src={require("./../../assets/upgrades/" + upgrade.iconName + ".png")} alt={upgrade.iconName} />
                                 </div>
-                                <ReactTooltip id={upgrade.iconName + upgrade.id} class="tooltip-upgrade" type="dark" effect="solid">
+                                <ReactTooltip place="bottom" id={upgrade.iconName + upgrade.id} class="tooltip-upgrade" type="dark" effect="solid">
                                     <div className="header-tooltip">
-                                        <p className="title">{upgrade.title}</p>
-                                        <p className="price">{upgrade.basePrice}</p>
+                                        <img src={require("./../../assets/upgrades/" + upgrade.iconName + ".png")} alt={upgrade.iconName} />
+                                        <div>
+                                            <p className="title">{upgrade.title}</p>
+                                            <p className="price">{upgrade.basePrice}</p>
+                                        </div>
                                     </div>
                                     <p className="description">{upgrade.description}</p>
                                 </ReactTooltip>

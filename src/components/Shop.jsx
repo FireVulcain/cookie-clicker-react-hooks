@@ -8,6 +8,7 @@ import Scrollbar from "react-scrollbars-custom";
 export const Shop = () => {
     return (
         <div className="shop">
+            <h2 className="shop-title">Store</h2>
             <Scrollbar style={{ height: "100vh" }}>
                 <Upgrades />
                 <Items />

@@ -6,10 +6,18 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow: hidden;
+    background: url("assets/bgBlue.jpg");
 }
 
 * {
     box-sizing: border-box;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .container {
     display: flex;
@@ -22,8 +30,6 @@ body {
     position: relative;
     text-align: center;
     min-height: 100vh;
-
-    background: url("assets/bgBlue.jpg");
 }
 .infos-cookie .cookie-shower {
     min-height: 100vh;
@@ -132,13 +138,6 @@ body {
     font-size: 40px;
     opacity: 0;
     z-index: -1;
-
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 .cookie-container p.animate {
     z-index: 20;
@@ -155,16 +154,27 @@ body {
     }
 }
 /* SHOP */
+.shop .shop-title {
+    max-width: 300px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 28px;
+    text-shadow: 0px 0px 4px #000;
+    color: #fff;
+}
 .shop .discovered-false.item {
     display: none;
 }
 .shop {
-    /* overflow-y: scroll; */
     max-height: 100vh;
     width: 1000%;
+
+    background: url("assets/panelGradientTop.png") no-repeat top left, url("assets/panelGradientBottom.png") no-repeat bottom left,
+        url("assets/panelVertical.png") repeat-y;
 }
 .shop .items {
-    margin: 20px 0 0;
+    margin: 20px 0 0 15px;
     width: 300px;
     position: relative;
     overflow-y: hidden;
@@ -186,13 +196,6 @@ body {
     background: url("assets/storeTile.jpg");
 
     cursor: pointer;
-
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 .shop .item:hover {
     box-shadow: 0px 0px 16px #fff inset, 0px 0px 1px #000;
@@ -312,21 +315,26 @@ body {
 .shop .upgrades {
     display: flex;
     flex-wrap: wrap;
-    min-height: 60px;
-    margin-top: 20px;
+    max-width: 300px;
+    max-height: 54px;
+    margin-left: 15px;
+    padding-top: 20px;
+    background: url("assets/panelGradientLeft.png") no-repeat top left, url("assets/panelGradientRight.png") no-repeat top right,
+        url("assets/panelHorizontal.png") repeat-x;
 
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+.shop .upgrades:hover {
+    max-height: 100vh;
 }
 .shop .upgrades .upgrade-info {
-    margin: 0;
     width: 48px;
     height: 48px;
-    margin: 6px;
+    margin: 0 6px 12px;
     display: inline-block;
     cursor: pointer;
     position: relative;
@@ -342,13 +350,13 @@ body {
     display: block;
     background: url("assets/upgrades/upgradeFrame.png");
     background-position: 0px 0px;
-    z-index: 10;
 }
-
 .shop .upgrades .tooltip-upgrade .header-tooltip {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+}
+.shop .upgrades .tooltip-upgrade .header-tooltip img {
+    margin-right: 10px;
 }
 .shop .upgrades .tooltip-upgrade .title {
     font-weight: bold;
