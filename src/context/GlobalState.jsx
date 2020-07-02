@@ -7,7 +7,7 @@ import upgrades from "./../data/upgrades";
 
 const initialState = {
     bakedCookie: 0,
-    nbCookie: 0,
+    nbCookie: 400,
     perSecond: 0,
     perClick: 1,
     items: { ...items },
@@ -39,10 +39,10 @@ export const GlobalProvider = ({ children }) => {
         });
     }
 
-    function buyItem(item) {
+    function buyItem(item, bulk) {
         dispatch({
             type: "BUY_ITEM",
-            payload: item,
+            payload: { item, bulk },
         });
     }
     function checkDiscovered(item) {

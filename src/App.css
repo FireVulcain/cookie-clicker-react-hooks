@@ -195,6 +195,23 @@ body {
     opacity: 1;
     font-variant: small-caps;
 }
+
+.shop .items .storeBulk {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0;
+
+    background: #000;
+}
+.shop .items .storeBulk > div {
+    cursor: pointer;
+    color: #fff;
+    opacity: 0.5;
+    font-size: 18px;
+}
+.shop .items .storeBulk > div.active-bulk {
+    opacity: 1;
+}
 .shop .item {
     position: relative;
     display: flex;

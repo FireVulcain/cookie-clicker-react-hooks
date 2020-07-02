@@ -17,16 +17,18 @@ export default (state, action) => {
                 nbCookie: state.nbCookie + state.perSecond,
             };
         case "BUY_ITEM":
+            const { item, bulk } = action.payload;
+
             return {
                 ...state,
-                nbCookie: state.nbCookie - state.items[action.payload].price,
-                perSecond: state.perSecond + state.items[action.payload].perSecond,
+                nbCookie: state.nbCookie - state.items[item].price * bulk.multiplication,
+                perSecond: state.perSecond + state.items[item].perSecond * bulk.bulk,
                 items: {
                     ...state.items,
-                    [action.payload]: {
-                        ...state.items[action.payload],
-                        price: Math.ceil(state.items[action.payload].basePrice * 1.15 ** (state.items[action.payload].nbItem + 1)),
-                        nbItem: state.items[action.payload].nbItem + 1,
+                    [item]: {
+                        ...state.items[item],
+                        price: Math.ceil(state.items[item].basePrice * 1.15 ** (state.items[item].nbItem + 1)) * bulk.multiplication,
+                        nbItem: state.items[item].nbItem + bulk.bulk,
                     },
                 },
             };
