@@ -52,9 +52,20 @@ body {
     width: 100%;
     transform: translateX(-50%);
 }
-.infos-cookie .infos-cookie-wrapper > :not(.cookie-container) {
+.infos-cookie .infos-cookie-wrapper > :not(.cookie-container):not(.golden-cookie) {
     background: rgba(0, 0, 0, 0.4);
     padding: 10px 0;
+}
+
+.golden-cookie {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
 }
 
 @keyframes slide {

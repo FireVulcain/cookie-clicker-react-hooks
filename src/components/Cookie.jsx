@@ -14,16 +14,17 @@ export const Cookie = () => {
 
     const cookieShower = () => {
         if (state.bakedCookie >= 10000 && state.bakedCookie < 100000) {
-            return "cs1";
+            return " cs1";
         } else if (state.bakedCookie >= 100000 && state.bakedCookie < 1000000) {
-            return "cs2";
+            return " cs2";
         } else if (state.bakedCookie >= 1000000) {
-            return "cs3";
+            return " cs3";
         }
+        return "";
     };
     return (
         <div className="infos-cookie">
-            <div className={"cookie-shower " + cookieShower()}></div>
+            <div className={"cookie-shower" + cookieShower()}></div>
             <div className="infos-cookie-wrapper">
                 <Counter />
                 <div className="cookie-container">
