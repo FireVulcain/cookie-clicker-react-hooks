@@ -19,7 +19,7 @@ export const Items = () => {
         if (!state.upgrades[item]) return;
 
         let nbItem = state.items[item].nbItem + 1;
-        const found = state.upgrades[item].filter((upgrade) => upgrade.condition === nbItem);
+        const found = state.upgrades[item].filter((upgrade) => upgrade.condition <= nbItem);
 
         let stateCopy = Object.assign({}, state.upgrades);
 

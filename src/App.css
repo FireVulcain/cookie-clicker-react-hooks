@@ -175,7 +175,7 @@ body {
         url("assets/panelVertical.png") repeat-y;
 }
 .shop .items {
-    margin: 20px 0 0 15px;
+    margin: 0 0 0 15px;
     width: 300px;
     position: relative;
     overflow-y: hidden;
@@ -330,7 +330,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     max-width: 300px;
-    max-height: 54px;
+    max-height: 75px;
+    overflow: hidden;
     margin-left: 15px;
     padding-top: 20px;
     background: url("assets/panelGradientLeft.png") no-repeat top left, url("assets/panelGradientRight.png") no-repeat top right,
