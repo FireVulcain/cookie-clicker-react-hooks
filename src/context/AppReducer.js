@@ -27,7 +27,7 @@ export default (state, action) => {
                     ...state.items,
                     [item]: {
                         ...state.items[item],
-                        price: Math.ceil(state.items[item].basePrice * 1.15 ** (state.items[item].nbItem + 1)) * bulk.multiplication,
+                        price: Math.ceil(state.items[item].basePrice * 1.15 ** (state.items[item].nbItem + bulk.bulk)),
                         nbItem: state.items[item].nbItem + bulk.bulk,
                     },
                 },

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 
 // Assets
 import cookie from "./../assets/cookie.png";
@@ -11,7 +11,6 @@ import { GlobalContext } from "./../context/GlobalState";
 
 export const Cookie = () => {
     const { state, incrementCookieOnClick } = useContext(GlobalContext);
-    const [active, setActive] = useState(false);
 
     const cookieShower = () => {
         if (state.bakedCookie >= 10000 && state.bakedCookie < 100000) {
@@ -30,17 +29,7 @@ export const Cookie = () => {
                 <div className="cookie-container">
                     <div className="shine-cookie"></div>
                     <div className="shine-cookie-reverse"></div>
-                    <p onAnimationEnd={() => setActive(false)} className={active ? "animate" : null}>
-                        + {state.perClick}
-                    </p>
-                    <img
-                        onClick={() => {
-                            incrementCookieOnClick();
-                            setActive(!active);
-                        }}
-                        src={cookie}
-                        alt="Cookie"
-                    />
+                    <img onClick={() => incrementCookieOnClick()} src={cookie} alt="Cookie" />
                 </div>
             </div>
         </div>

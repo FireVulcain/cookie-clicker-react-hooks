@@ -7,7 +7,7 @@ import upgrades from "./../data/upgrades";
 
 const initialState = {
     bakedCookie: 0,
-    nbCookie: 400,
+    nbCookie: 40000000000,
     perSecond: 0,
     perClick: 1,
     items: { ...items },
